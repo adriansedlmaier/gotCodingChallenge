@@ -1,0 +1,27 @@
+.house-card {
+  width: 400px;
+  height: 250px;
+  overflow-y: auto;
+  background: #FCFEF0;
+}
+
+mat-card:hover  {
+  background: #FCFEF0;
+  transform: scale(1.05);
+  transition: transform 400ms ease;
+}
+
+.mat-card {
+  color: #331C0E
+}
+
+.mat-chip {
+  background: #331C0E;
+  color: #FCFEF0;
+}
+
+.paging {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
