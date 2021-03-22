@@ -14,7 +14,7 @@ export class GotApiService {
   }
 
   public getHouses(page: number): Observable<IHouse[]> {
-    return this.http.get<IHouse[]>(`${this.baseUrl}/houses?page=${page}&pageSize=${this.PAGE_SIZE}&hasWords=true`);
+    return this.http.get<IHouse[]>(`${this.baseUrl}/houses?page=${page}&pageSize=${this.PAGE_SIZE}`);
   }
 
   public getCharacter(memberUrl: string): Observable<any> {

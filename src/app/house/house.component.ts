@@ -53,7 +53,7 @@ export class HouseComponent implements OnInit {
     house.details = !house.details;
   }
 
-  onScroll(): void {
-    this.fetchData();
+  checkSeats(house: IHouse): boolean {
+    return house.seats !== null && house.seats[0] !== '';
   }
 }

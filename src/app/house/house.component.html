@@ -7,13 +7,15 @@
       </mat-card-header>
       <mat-card-content>
         <div *ngIf="house.details">
-          <h3>Coat of Arms:</h3> <p>{{house.coatOfArms}} </p>
-          <h3>Words: </h3> <p>{{house.words}} </p>
-          <h3>Seats: </h3> <p> {{house.seats}} </p>
+          <h3>Coat of Arms:</h3> <p>{{house.coatOfArms || "No Coat of Arms known"}}</p>
+          <h3>Words: </h3> <p>{{house.words || "No words known"}} </p>
+          <h3>Seats: </h3> <p *ngIf="checkSeats(house); else noSeats">{{house.seats}}</p>
+          <ng-template #noSeats><p>No seats known</p></ng-template>
           <h3>Sworn Members:</h3>
-          <mat-chip-list>
+          <mat-chip-list *ngIf="house.members?.length > 0; else noSwornMembers">
             <mat-chip *ngFor="let member of house.members">{{member}}</mat-chip>
           </mat-chip-list>
+          <ng-template #noSwornMembers><p>No sworn members known</p></ng-template>
         </div>
       </mat-card-content>
     </mat-card>
